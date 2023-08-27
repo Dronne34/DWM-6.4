@@ -2,8 +2,8 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const int startwithgaps[]    = { 8 };	/* 1 means gaps are used by default, this can be customized for each tag */
-static const unsigned int gappx[]   = { 8 };   /* default gap between windows in pixels, this can be customized for each tag */
+static const int startwithgaps[]    = { 1 };	/* 1 means gaps are used by default, this can be customized for each tag */
+static const unsigned int gappx[]   = { 10 };   /* default gap between windows in pixels, this can be customized for each tag */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -32,22 +32,23 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                      instance      title          tags mask     switchtotag      isfloating   monitor */
-	{ "Gimp",                     NULL,         NULL,          0,            3,             1,           -1 },
-	{ "firefox",                  NULL,         NULL,          1 << 2,       3,             0,           -1 },
-    { "Gpick",                    NULL,         NULL,          0,            0,             1,           -1 },
-    { "Subl",                     NULL,         NULL,          1,            3,             0,           -1 },
-    { "mpv",                      NULL,         NULL,          1 << 4,       3,             0,           -1 },
-    { "Thunar",                   NULL,         NULL,          1,            3,             0,           -1 },
-    { "URxvt",                    NULL,         NULL,          0,            0,             0,           -1 },
-    { "Meld",                     NULL,         NULL,          1 << 1,       3,             0,           -1 },
-    { "Alacritty",                NULL,         NULL,          1,            3,             0,           -1 },
-    { "File-roller",              NULL,         NULL,          1,            3,             1,           -1 },
-    { "Brave-browser",            NULL,         NULL,          1 << 2,       3,             0,           -1 },
-    { "st-256color",              NULL,         NULL,          1 << 4,       3,             0,           -1 },
-    { "TelegramDesktop",          NULL,         NULL,          1 << 1,       3,             0,           -1 },
-	{ "File Operation Progress",  NULL,         NULL,          0,            0,             1,           -1 },                              
-	{ "TelegramDesktop", "telegram-desktop",  "Media viewer",  1 << 1,       3,             1,           -1 },
+	/* class                      instance      title          tags mask     switchtotag    isfloating   monitor   float x,y,w,h     floatborderpx */
+	{ "Gimp",                     NULL,         NULL,          0,            1,             1,           -1,     50,50,500,500,    1, },      
+	{ "firefox",                  NULL,         NULL,          1 << 2,       1,             0,           -1,     50,50,500,500,    1, }, 
+    { "Gpick",                    NULL,         NULL,          0,            0,             1,           -1,     50,50,500,500,    1, }, 
+    { "Subl",                     NULL,         NULL,          1,            1,             0,           -1,     50,50,500,500,    1, }, 
+    { "mpv",                      NULL,         NULL,          1 << 4,       1,             0,           -1,     50,50,500,500,    1, }, 
+    { "Thunar",                   NULL,         NULL,          1,            1,             0,           -1,     50,50,500,500,    1, }, 
+    { "URxvt",                    NULL,         NULL,          0,            0,             0,           -1,     50,50,500,500,    1, }, 
+    { "ffplay",                   NULL,         NULL,          1 << 4,       0,             0,           -1,     50,50,500,500,    1, }, 
+    { "Meld",                     NULL,         NULL,          1 << 1,       1,             0,           -1,     50,50,500,500,    1, }, 
+    { "Alacritty",                NULL,         NULL,          1,            1,             0,           -1,     50,50,500,500,    1, }, 
+    { "File-roller",              NULL,         NULL,          1,            1,             1,           -1,     50,50,500,500,    1, }, 
+    { "Brave-browser",            NULL,         NULL,          1 << 2,       1,             0,           -1,     50,50,500,500,    1, }, 
+    { "st-256color",              NULL,         NULL,          1 << 4,       1,             0,           -1,     50,50,500,500,    1, }, 
+    { "TelegramDesktop",          NULL,         NULL,          1 << 1,       1,             0,           -1,     50,50,500,500,    1, }, 
+	{ "File Operation Progress",  NULL,         NULL,          0,            0,             1,           -1,     50,50,500,500,    1, },                               
+	{ "TelegramDesktop", "telegram-desktop",  "Media viewer",  1 << 1,       1,             1,           -1,     50,50,500,500,    1, }, 
 	// { "NULL",                   "NULL",  "Picture in picture", 1 << 4,       3,             0,           -1 },
 
 };
