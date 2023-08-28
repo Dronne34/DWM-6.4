@@ -48,7 +48,7 @@ static const Rule rules[] = {
     { "st-256color",              NULL,         NULL,          1 << 4,       1,             0,           -1,       50,50,500,500,    1, }, 
     { "TelegramDesktop",          NULL,         NULL,          1 << 1,       1,             0,           -1,       50,50,500,500,    1, }, 
 	{ "File Operation Progress",  NULL,         NULL,          0,            0,             1,           -1,       50,50,500,500,    1, },                               
-	{ "TelegramDesktop", "telegram-desktop",  "Media viewer",  1 << 1,       1,             1,           -1,       50,50,500,500,    1, }, 
+	{ "TelegramDesktop", "telegram-desktop",  "Media viewer",  1 << 1,       1,             1,           -1,       50,50,1316,836,   1, }, 
 	// { "NULL",                   "NULL",  "Picture in picture", 1 << 4,       3,             0,           -1 },
 
 };
