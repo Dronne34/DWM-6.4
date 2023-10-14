@@ -51,6 +51,8 @@ static const Rule rules[] = {
 	{ "File Operation Progress",  NULL,         NULL,          0,            0,             1,           -1,       50,50,500,500,    1, },                               
 	{ "TelegramDesktop", "telegram-desktop",  "Media viewer",  1 << 1,       1,             1,           -1,       50,50,1368,768,   1, }, 
 	// { "NULL",                   "NULL",  "Picture in picture", 1 << 4,       3,             0,           -1 },
+	{ NULL,                 "x_ranger",         NULL,          0,            0,             1,           -1,       50,50,1368,768,   1, },
+	{ NULL,                 "x_st",             NULL,          0,            0,             1,           -1,       50,50,960,540,    1, },                               
 
 };
 
@@ -82,10 +84,11 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 #define TERMINAL "st"
 /* commands */
-static const char *dmenucmd[]      =   { "dmenu_run",        NULL };
-static const char *termcmd[]       =   { "st",               NULL };
-static const char *browsercmd[]    =   { "firefox",          NULL };
-
+static const char *dmenucmd[]   = { "dmenu_run",        NULL };
+static const char *termcmd[]    = { "st",               NULL };
+static const char *browsercmd[] = { "firefox",          NULL };
+static const char *xranger[] =  { "st", "-n", "x_ranger", "-g", "144x41", "-e", "ranger", NULL };
+static const char *xst[]     =  { "st", "-n", "x_st", "-g", "144x41",  NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -95,6 +98,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_f,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_u,      spawn,          {.v = xranger } },
+	{ MODKEY,                       XK_y,      spawn,          {.v = xst } },
     { MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
