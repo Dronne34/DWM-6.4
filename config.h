@@ -25,8 +25,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
-// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+// static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
                                        /* xprop(1):
@@ -80,10 +80,10 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
-#define TERMINAL "urxvt"
+#define TERMINAL "st"
 /* commands */
 static const char *dmenucmd[]      =   { "dmenu_run",        NULL };
-static const char *termcmd[]       =   { "alacritty",        NULL };
+static const char *termcmd[]       =   { "st",               NULL };
 static const char *browsercmd[]    =   { "firefox",          NULL };
 
 
@@ -92,11 +92,10 @@ static const Key keys[] = {
 	
     { ShiftMask|Mod4Mask,           XK_s,      spawn,          SHCMD("subl") },
     { ShiftMask|Mod4Mask,           XK_t,      spawn,          SHCMD("thunar") },
-	{ MODKEY|Mod4Mask,              XK_m,      spawn,          SHCMD("dm-ncmpcpp") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_f,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-
+    { MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
