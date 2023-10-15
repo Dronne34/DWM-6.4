@@ -52,7 +52,9 @@ static const Rule rules[] = {
     // { "st-256color",              NULL,         NULL,          1 << 4,       1,             0,           -1,       50,50,500,500,    1, }, 
 	// { "NULL",                   "NULL",  "Picture in picture", 1 << 4,       3,             0,           -1 },
 	{ NULL,                 "x_ranger",         NULL,          0,            0,             1,           -1,       50,50,1368,768,   1, },
-	{ NULL,                 "x_st",             NULL,          0,            0,             1,           -1,       50,50,960,540,    1, },                               
+	{ NULL,                 "x_st",             NULL,          0,            0,             1,           -1,       50,50,960,540,    1, }, 
+	{ NULL,                 "key",              NULL,          0,            0,             1,           -1,       50,50,960,540,    1, },                               
+
 	{ "TelegramDesktop", "telegram-desktop",  "Media viewer",  1 << 1,       1,             1,           -1,       50,50,1368,768,   1, }, 
 
 };
@@ -88,14 +90,14 @@ static const Layout layouts[] = {
 static const char *dmenucmd[]   = { "dmenu_run",        NULL };
 static const char *termcmd[]    = { "st",               NULL };
 static const char *browsercmd[] = { "firefox",          NULL };
-static const char *xranger[] =  { "st", "-n", "x_ranger", "-g", "144x41", "-e", "ranger", NULL };
-static const char *xst[]     =  { "st", "-n", "x_st", "-g", "144x41",  NULL };
+static const char *xranger[]    = { "st", "-n", "x_ranger", "-g", "144x41", "-e", "ranger", NULL };
+static const char *xst[]        = { "st", "-n", "x_st", "-g", "144x41",  NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	
-    { ShiftMask|Mod4Mask,           XK_s,      spawn,          SHCMD("subl") },
-    { ShiftMask|Mod4Mask,           XK_t,      spawn,          SHCMD("thunar") },
+    // { ShiftMask|Mod4Mask,           XK_s,      spawn,          SHCMD("subl") },
+    // { ShiftMask|Mod4Mask,           XK_t,      spawn,          SHCMD("thunar") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_f,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
