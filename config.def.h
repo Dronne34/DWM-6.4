@@ -40,19 +40,20 @@ static const Rule rules[] = {
     { "Subl",                     NULL,         NULL,          1,            1,             0,           -1,       50,50,500,500,    1, }, 
     { "mpv",                      NULL,         NULL,          1 << 4,       1,             0,           -1,       50,50,500,500,    1, }, 
     { "Thunar",                   NULL,         NULL,          1,            1,             0,           -1,       50,50,500,500,    1, }, 
+    { "Pcmanfm",                  NULL,         NULL,          1,            1,             0,           -1,       50,50,500,500,    1, }, 
     { "URxvt",                    NULL,         NULL,          0,            1,             0,           -1,       50,50,500,500,    1, }, 
     { "ffplay",                   NULL,         NULL,          1 << 4,       1,             0,           -1,       50,50,500,500,    1, }, 
     { "Meld",                     NULL,         NULL,          1 << 1,       1,             0,           -1,       50,50,500,500,    1, }, 
     { "Alacritty",                NULL,         NULL,          1,            1,             0,           -1,       50,50,500,500,    1, }, 
     { "File-roller",              NULL,         NULL,          1,            1,             1,           -1,       50,50,500,500,    1, }, 
     { "Brave-browser",            NULL,         NULL,          1 << 2,       1,             0,           -1,       50,50,500,500,    1, }, 
-    { "st-256color",              NULL,         NULL,          1 << 4,       1,             0,           -1,       50,50,500,500,    1, }, 
     { "TelegramDesktop",          NULL,         NULL,          1 << 1,       1,             0,           -1,       50,50,500,500,    1, }, 
 	{ "File Operation Progress",  NULL,         NULL,          0,            0,             1,           -1,       50,50,500,500,    1, },                               
-	{ "TelegramDesktop", "telegram-desktop",  "Media viewer",  1 << 1,       1,             1,           -1,       50,50,1368,768,   1, }, 
+    // { "st-256color",              NULL,         NULL,          1 << 4,       1,             0,           -1,       50,50,500,500,    1, }, 
 	// { "NULL",                   "NULL",  "Picture in picture", 1 << 4,       3,             0,           -1 },
 	{ NULL,                 "x_ranger",         NULL,          0,            0,             1,           -1,       50,50,1368,768,   1, },
 	{ NULL,                 "x_st",             NULL,          0,            0,             1,           -1,       50,50,960,540,    1, },                               
+	{ "TelegramDesktop", "telegram-desktop",  "Media viewer",  1 << 1,       1,             1,           -1,       50,50,1368,768,   1, }, 
 
 };
 
