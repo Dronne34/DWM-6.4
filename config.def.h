@@ -94,8 +94,8 @@ static const char *xst[]     =  { "st", "-n", "x_st", "-g", "144x41",  NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	
-    { ShiftMask|Mod4Mask,           XK_s,      spawn,          SHCMD("subl") },
-    { ShiftMask|Mod4Mask,           XK_t,      spawn,          SHCMD("thunar") },
+    // { ShiftMask|Mod4Mask,           XK_s,      spawn,          SHCMD("subl") },
+    // { ShiftMask|Mod4Mask,           XK_t,      spawn,          SHCMD("thunar") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_f,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
