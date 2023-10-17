@@ -11,17 +11,23 @@ static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const int viewonrulestag 	= 1;		 /* 1 means when open applications view will move to tags defined in rules*/
 static const char *fonts[]          = {"Iosevka Nerd Font:style=Regular:size=10"};
 static const char dmenufont[]       = {"FantasqueSansMono Nerd Font:size=13"};
+
+/* color */
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_gray5[]       = "#87a96b";
+static const char col_gray6[]       = "#a52a2a";
+static const char col_gray7[]       = "#3d2b1f";
+static const char col_gray8[]       = "#005577";
+static const char col_cyan[]        = "#8db600";
 static const char col_urgborder[]   = "#ff0000";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-	[SchemeUrg]  = { col_gray4, col_cyan,  col_urgborder  },
+	/*               fg           bg           border   */
+	[SchemeNorm] = { col_gray3,  col_gray1,   col_gray2 },
+	[SchemeSel]  = { col_gray4,  col_gray8,   col_cyan  },
+	[SchemeUrg]  = { col_gray6,  col_cyan,    col_urgborder  },
 };
 
 /* tagging */
@@ -29,10 +35,10 @@ static const char *colors[][3]      = {
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
-                                       /* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
+    /*  xprop(1):
+	*	WM_CLASS(STRING) = instance, class
+	*	WM_NAME(STRING) = title
+	*/
 	/* class                      instance      title          tags mask     switchtotag    isfloating   monitor   float x,y,w,h     floatborderpx */
 	{ "Gimp",                     NULL,         NULL,          0,            1,             1,           -1,       50,50,500,500,    1, },      
 	{ "firefox",                  NULL,         NULL,          1 << 2,       1,             0,           -1,       50,50,500,500,    1, }, 
