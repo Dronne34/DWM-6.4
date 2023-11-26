@@ -9,7 +9,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const int viewonrulestag 	= 1;		 /* 1 means when open applications view will move to tags defined in rules*/
-static const char *fonts[]          = {"Iosevka Nerd Font:style=Regular:size=10"};
+static const char *fonts[]          = {"Iosevka Nerd Font:style=Regular:size=13"};
 static const char dmenufont[]       = {"FantasqueSansMono Nerd Font:size=13"};
 
 /* color */
@@ -61,6 +61,9 @@ static const Rule rules[] = {
 	{ NULL,                 "x_st",             NULL,          0,            0,             1,           -1,       50,50,900,530,    1, }, 
 	{ NULL,                 "key",              NULL,          0,            0,             1,           -1,       50,50,1024,768,   1, },                               
 	{ "TelegramDesktop", "telegram-desktop",  "Media viewer",  1 << 1,       1,             1,           -1,       50,50,1024,768,   1, }, 
+    { "Subl",                     "subl",     "Open File",     1,            1,             1,           -1,       50,50,900,530,    1, },
+
+
 
 };
 
