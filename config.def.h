@@ -9,7 +9,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int viewonrulestag     = 1;         /* 1 means when open applications view will move to tags defined in rules*/
 static const char *fonts[]          = {"Mononoki Nerd Font:style=Regular:size=12"};
-static const char dmenufont[]       = {"FantasqueSansMono Nerd Font:size=14"};
+static const char dmenufont[]       = {"FantasqueSansMono Nerd Font:size=12"};
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 /* color */
 static const char col_gray1[]       = "#222222";
@@ -59,17 +59,18 @@ static const Rule rules[] = {
 { NULL,                         "x_mem",                NULL,             0,            0,             1,             -1,     50,50,1050,590,    1 },
 { NULL,                         "x_ranger",             NULL,             0,            0,             1,             -1,     50,50,1050,590,    1 },
 { "cava",                       "st-256color",          NULL,             1 << 4,       1,             0,             -1,     50,50,500,500,     1 },
+{ "st-256color",                "st-256color",          "cava",           1 << 4,       1,             0,             -1,     50,50,500,500,     1 },
 { "ncmpcpp",                    "st-256color",          NULL,             1 << 4,       1,             0,             -1,     50,50,500,500,     1 },
 { "TelegramDesktop",            "telegram-desktop",     "Media viewer",   1 << 1,       1,             1,             -1,     50,50,1065,795,    1 },
-{ "Brave-browser",              NULL,                   NULL,             0,            0,             1,             -1,     50,50,1050,590,    1 },
-{ "Brave",                      NULL,                   "Save File",      1 << 2,       0,             1,             -1,     50,50,1050,590,    1 },
 { "File-roller",                "file-roller",          "Extract",        0,            0,             1,             -1,     50,50,1050,590,    1 },
 { "Subl",                       NULL,                   "Open File",      0,            0,             1,             -1,     50,50,1050,590,    1 },
 
 
 
 // { NULL,                       "brave-browser",         NULL,             1 << 2,       0,             1,             -1,     50,50,1050,590,    1 },
+/* { "Brave",                      NULL,                   "Save File",      1 << 2,       0,             1,             -1,     50,50,1050,590,    1 }, */
 // { "st-256color",              NULL,                    NULL,             1,            1,             0,             -1,     50,50,500,500,     1 },
+/* { "Brave-browser",              NULL,                   NULL,             0,            0,             1,             -1,     50,50,1050,590,    1 }, */
 
 
 };
@@ -104,8 +105,8 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[]   = { "dmenu_run_history",           NULL };
 static const char *browsercmd[] = { "chromium",                    NULL };
-static const char *termfile[]   = { "thunar",                      NULL };
-static const char *termedit[]   = { "alacritty", "-e", "nvim",      NULL };
+static const char *termfile[]   = { "alacritty", "-e", "ranger",          NULL };
+static const char *termedit[]   = { "alacritty", "-e", "vim",             NULL };
 
 static const char *termcmd[]    = { "st",                                                   NULL };
 static const char *xranger[]    = { "st", "-n", "x_ranger", "-g", "100x30", "-e", "ranger", NULL };
