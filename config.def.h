@@ -103,7 +103,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 #define TERMINAL "st"
 /* commands */
-static const char *dmenucmd[]   = { "dmenu_run_history",           NULL };
+static const char *dmenucmd[]   = { "dmenu_run_history", "-i", "-l", "15", NULL };
 static const char *browsercmd[] = { "chromium",                    NULL };
 static const char *termfile[]   = { "alacritty", "-e", "ranger",          NULL };
 static const char *termedit[]   = { "alacritty", "-e", "vim",             NULL };
