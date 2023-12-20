@@ -101,14 +101,14 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
-#define TERMINAL "st"
+#define TERMINAL "xterm"
 /* commands */
 static const char *dmenucmd[]   = { "dmenu_run_history", "-i", "-l", "15", NULL };
 static const char *browsercmd[] = { "chromium",                    NULL };
-static const char *termfile[]   = { "alacritty", "-e", "ranger",          NULL };
-static const char *termedit[]   = { "alacritty", "-e", "vim",             NULL };
+static const char *termfile[]   = { "xterm", "-e", "ranger",          NULL };
+static const char *termedit[]   = { "xterm", "-e", "vim",             NULL };
 
-static const char *termcmd[]    = { "st",                                                   NULL };
+static const char *termcmd[]    = { "xterm",                                                   NULL };
 static const char *xranger[]    = { "st", "-n", "x_ranger", "-g", "100x30", "-e", "ranger", NULL };
 static const char *xst[]        = { "st", "-n", "x_st", "-g", "100x30",                     NULL };
 
