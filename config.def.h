@@ -106,7 +106,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[]   = { "dmenu_run_history", "-i", "-l", "15", NULL };
 static const char *browsercmd[] = { "chromium",                    NULL };
-static const char *termfile[]   = { "xterm", "-e", "ranger",          NULL };
+static const char *termfile[]   = { "st", "-f", "Iosevka Nerd Font Mono:size=12", "-e", "ranger",          NULL };
 static const char *termedit[]   = { "xterm", "-e", "vim",             NULL };
 
 static const char *termcmd[]    = { "xterm",                                                   NULL };
