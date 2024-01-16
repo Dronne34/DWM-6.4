@@ -2,78 +2,63 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const int startwithgaps[]    = { 10 };   /* 1 means gaps are used by default, this can be customized for each tag */
+static const int startwithgaps[]    = { 10 };	/* 1 means gaps are used by default, this can be customized for each tag */
 static const unsigned int gappx[]   = { 10 };   /* default gap between windows in pixels, this can be customized for each tag */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int viewonrulestag     = 1;         /* 1 means when open applications view will move to tags defined in rules*/
+static const int viewonrulestag 	= 1;		 /* 1 means when open applications view will move to tags defined in rules*/
 static const char *fonts[]          = {"Mononoki Nerd Font:style=Regular:size=12"};
 static const char dmenufont[]       = {"FantasqueSansMono Nerd Font:size=12"};
-static const Bool viewontag         = True;     /* Switch view on tag switch */
-/* color */
-
-static const char col_gray[]        = "#2A303A";
-static const char col_gray1[]       = "#222222";
+static const char col_gray1[]       = "#2A303A";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const char col_cyan1[]       = "#C33445";
-static const char col_green[]       = "#37A95A";
-
 static const char *colors[][3]      = {
-    /*               fg         bg         border   */
-    [SchemeNorm] = { col_gray4, col_gray, col_gray2 },
-    [SchemeSel]  = { col_gray4, col_cyan,  col_cyan },
+	/*               fg         bg         border   */
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
 /* tagging */
-// static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
-    /* xprop(1):
-     *  WM_CLASS(STRING) = instance, class
-     *  WM_NAME(STRING) = title
-     * WM_WINDOW_ROLE(STRING) = role
-     */
-/* class                        instance                title             tags mask     switchtotag   isfloating    monitor  float x,y,w,h     floatborderpx*/    
-{ "Gimp",                       NULL,                   NULL,             0,            1,             1,             -1,     50,50,500,500,     1 },   
-{ "firefox",                    NULL,                   NULL,             1 << 2,       1,             0,             -1,     50,50,500,500,     1 },         
-{ "mpv",                        NULL,                   NULL,             1 << 3,       1,             0,             -1,     50,50,500,500,     1 },
-{ "Subl",                       NULL,                   NULL,             1,            1,             0,             -1,     50,50,500,500,     1 },
-{ "Thunar",                     NULL,                   NULL,             1,            1,             0,             -1,     50,50,500,500,     1 },
-{ "Pcmanfm",                    NULL,                   NULL,             1,            1,             0,             -1,     50,50,500,500,     1 },
-{ "URxvt",                      NULL,                   NULL,             0,            1,             0,             -1,     50,50,500,500,     1 },
-{ "ffplay",                     NULL,                   NULL,             1 << 4,       1,             0,             -1,     50,50,500,500,     1 },
-{ "Meld",                       NULL,                   NULL,             1 << 1,       1,             0,             -1,     50,50,500,500,     1 },
-{ "Gpick",                      NULL,                   NULL,             1,            1,             1,             -1,     50,50,1050,590,    1 },
-{ "pulsemixer",                 NULL,                   NULL,             0,            1,             1,             -1,     50,50,1050,590,    1 },
-{ "Alacritty",                  NULL,                   NULL,             1,            1,             0,             -1,     50,50,500,500,     1 },
-{ "File-roller",                NULL,                   NULL,             1,            1,             1,             -1,     50,50,1050,590,    1 },
-{ "Lxappearance",               NULL,                   NULL,             1,            1,             1,             -1,     50,50,1050,590,    1 },
-{ "Brave-browser",              NULL,                   NULL,             1 << 2,       1,             0,             -1,     50,50,500,500,     1 },
-{ "Chromium",                   NULL,                   NULL,             1 << 2,       1,             0,             -1,     50,50,500,500,     1 },
-{ "TelegramDesktop",            NULL,                   NULL,             1 << 1,       1,             0,             -1,     50,50,500,500,     1 },
-{ "File Operation Progress",    NULL,                   NULL,             0,            0,             1,             -1,     50,50,500,500,     1 },
-{ NULL,                         "x_st",                 NULL,             0,            0,             1,             -1,     50,50,1050,590,    1 },
-{ NULL,                         "key",                  NULL,             0,            0,             1,             -1,     50,50,1050,590,    1 },
-{ NULL,                         "x_mem",                NULL,             0,            0,             1,             -1,     50,50,1050,590,    1 },
-{ NULL,                         "x_ranger",             NULL,             0,            0,             1,             -1,     50,50,1050,590,    1 },
-{ "cava",                       "st-256color",          NULL,             1 << 4,       1,             0,             -1,     50,50,500,500,     1 },
-{ "st-256color",                "st-256color",          "cava",           1 << 4,       1,             0,             -1,     50,50,500,500,     1 },
-{ "ncmpcpp",                    "st-256color",          NULL,             1 << 4,       1,             0,             -1,     50,50,500,500,     1 },
-{ "TelegramDesktop",            "telegram-desktop",     "Media viewer",   1 << 1,       1,             1,             -1,     50,50,1065,795,    1 },
-{ "File-roller",                "file-roller",          "Extract",        0,            0,             1,             -1,     50,50,1050,590,    1 },
-{ "Subl",                       NULL,                   "Open File",      0,            0,             1,             -1,     50,50,1050,590,    1 },
-
-
-
-// { NULL,                       "brave-browser",         NULL,             1 << 2,       0,             1,             -1,     50,50,1050,590,    1 },
-/* { "Brave",                      NULL,                   "Save File",      1 << 2,       0,             1,             -1,     50,50,1050,590,    1 }, */
-// { "st-256color",              NULL,                    NULL,             1,            1,             0,             -1,     50,50,500,500,     1 },
-/* { "Brave-browser",              NULL,                   NULL,             0,            0,             1,             -1,     50,50,1050,590,    1 }, */
+	/* xprop(1):
+	 *	WM_CLASS(STRING) = instance, class
+	 *	WM_NAME(STRING) = title
+	 */
+	/* class                      instance             title           tags mask     switchtotag    isfloating   monitor */
+	{ "Gimp",                     NULL,                NULL,            0,            1,             1,           -1, },
+	{ "Firefox",                  NULL,                NULL,            1 << 2,       1,             0,           -1, },
+    { "mpv",                      NULL,                NULL,            1 << 3,       1,             0,           -1, },
+    { "Subl",                     NULL,                NULL,            1,            1,             0,           -1, },
+    { "Thunar",                   NULL,                NULL,            1,            1,             0,           -1, },
+    { "Pcmanfm",                  NULL,                NULL,            1,            1,             0,           -1, },
+    { "URxvt",                    NULL,                NULL,            0,            1,             0,           -1, },
+    { "ffplay",                   NULL,                NULL,            1 << 4,       1,             0,           -1, },
+    { "Meld",                     NULL,                NULL,            1 << 1,       1,             0,           -1, },
+    { "Gpick",                    NULL,                NULL,            1,            1,             1,           -1, },
+    { "pulsemixer",               NULL,                NULL,            0,            1,             1,           -1, },
+    { "Alacritty",                NULL,                NULL,            1,            1,             0,           -1, },
+    { "File-roller",              NULL,                NULL,            1,            1,             1,           -1, },
+    { "Lxappearance",             NULL,                NULL,            1,            1,             1,           -1, },
+    { "Brave-browser",            NULL,                NULL,            1 << 2,       1,             0,           -1, },
+    { "Chromium",                 NULL,                NULL,            1 << 2,       1,             0,           -1, },
+    { "TelegramDesktop",          NULL,                NULL,            1 << 1,       1,             0,           -1, },
+    { "File Operation Progress",  NULL,                NULL,            0,            0,             1,           -1, },
+    { NULL,                       "x_st",              NULL,            0,            0,             1,           -1, },
+    { NULL,                       "key",               NULL,            0,            0,             1,           -1, },
+    { NULL,                       "x_mem",             NULL,            0,            0,             1,           -1, },
+    { NULL,                       "x_ranger",          NULL,            0,            0,             1,           -1, },
+    { "cava",                     "st-256color",       NULL,            1 << 4,       1,             0,           -1, },
+    { "st-256color",              "st-256color",       "cava",          1 << 4,       1,             0,           -1, },
+    { "ncmpcpp",                  "st-256color",       NULL,            1 << 4,       1,             0,           -1, },
+    { "TelegramDesktop",          "telegram-desktop",  "Media viewer",  1 << 1,       1,             1,           -1, },
+    { "File-roller",              "file-roller",       "Extract",       0,            0,             1,           -1, },
+    { "Subl",                     NULL,                "Open File",     0,            0,             1,           -1, },
+    { "zenity",                   NULL,                NULL,            0,            0,             1,           -1, },
 
 
 };
@@ -84,43 +69,44 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
-#include "fibonacci.c"
 static const Layout layouts[] = {
-    /* symbol     arrange function */
-    { "[]=",      tile },    /* first entry is default */
-    { "><>",      NULL },    /* no layout function means floating behavior */
-    { "[M]",      monocle },
-    { "[@]",      spiral },
-    { "[\\]",     dwindle },
+	/* symbol     arrange function */
+	{ "[]=",      tile },    /* first entry is default */
+	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[M]",      monocle },
+	{ NULL,       NULL },
 };
 
 /* key definitions */
 #define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
-    { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-    { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-    { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-    { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
-#define TERMINAL "xterm"
+
 /* commands */
+static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+
+	
 static const char *dmenucmd[]   = { "dmenu_run_history", "-i", "-l", "15", NULL };
 static const char *browsercmd[] = { "chromium",                    NULL };
 static const char *termfile[]   = { "st", "-f", "Iosevka Nerd Font Mono:size=12", "-e", "ranger",          NULL };
 static const char *termedit[]   = { "xterm", "-e", "vim",             NULL };
 
 static const char *termcmd[]    = { "xterm",                                                   NULL };
-static const char *xranger[]    = { "st", "-n", "x_ranger", "-g", "100x30", "-e", "ranger", NULL };
-static const char *xst[]        = { "st", "-n", "x_st", "-g", "100x30",                     NULL };
+static const char *xranger[]    = { "st", "-n", "x_ranger", "-g", "120x40", "-e", "ranger", NULL };
+static const char *xst[]        = { "st", "-n", "x_st", "-g", "120x40",                     NULL };
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
     { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
     { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-    { MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
+    // { MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
     { MODKEY,                       XK_space,  setlayout,      {0} },
     { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
     { MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
@@ -196,5 +182,4 @@ static const Button buttons[] = {
     { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
     { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
 
