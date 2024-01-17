@@ -9,6 +9,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int viewonrulestag 	= 1;		 /* 1 means when open applications view will move to tags defined in rules*/
 static const char *fonts[]          = {"Mononoki Nerd Font:style=Regular:size=12"};
+static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char dmenufont[]       = {"FantasqueSansMono Nerd Font:size=12"};
 static const char col_gray1[]       = "#2A303A";
 static const char col_gray2[]       = "#444444";
