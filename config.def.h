@@ -96,7 +96,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 	
 static const char *browsercmd[] = { "chromium",                       NULL };
 static const char *termedit[]   = { "st", "-e",  "vim",               NULL };
-static const char *termfile[]   = { "st", "-e", "ranger",             NULL };
+static const char *termfile[]   = { "xterm", "-e", "ranger",             NULL };
 static const char *dmenucmd[]   = { "dmenu_run_history", "-i", "-l", "15", NULL };
 
 static const char *termcmd[]    = { "st",                                                   NULL };
