@@ -8,9 +8,9 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int viewonrulestag 	= 1;		 /* 1 means when open applications view will move to tags defined in rules*/
-static const char *fonts[]          = {"Mononoki Nerd Font:style=Regular:size=14"};
+static const char *fonts[]          = {"Mononoki Nerd Font:style=Regular:size=15"};
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char dmenufont[]       = {"FantasqueSansMono Nerd Font:size=12"};
+static const char dmenufont[]       = {"FantasqueSansMono Nerd Font:size=15"};
 static const char col_gray1[]       = "#2A303A";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -95,8 +95,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 
 	
 static const char *browsercmd[] = { "chromium",                       NULL };
-static const char *termedit[]   = { "st", "-e",  "vim",               NULL };
-static const char *termfile[]   = { "xterm", "-e", "ranger",             NULL };
+static const char *termedit[]   = { "alacritty", "-e",  "vim",               NULL };
+static const char *termfile[]   = { "alacritty", "-e", "ranger",             NULL };
 static const char *dmenucmd[]   = { "dmenu_run_history", "-i", "-l", "15", NULL };
 
 static const char *termcmd[]    = { "st",                                                   NULL };
