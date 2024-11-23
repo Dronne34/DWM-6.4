@@ -59,6 +59,7 @@ static const Rule rules[] = {
     { "ncmpcpp",                  "st-256color",       NULL,            1 << 4,       1,             0,           -1, },
     { "TelegramDesktop",          "telegram-desktop",  "Media viewer",  1 << 1,       1,             1,           -1, },
     { "file-roller",              "file-roller",       "Extract",       0,            0,             1,           -1, },
+    { "file-roller",              "file-roller",       "Compress",      0,            0,             1,           -1, },
     { "Subl",                     NULL,                "Open File",     0,            0,             1,           -1, },
     { "zenity",                   NULL,                NULL,            0,            0,             1,           -1, },
 
