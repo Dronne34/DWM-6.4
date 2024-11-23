@@ -8,8 +8,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int viewonrulestag 	= 1;		 /* 1 means when open applications view will move to tags defined in rules*/
-static const char *fonts[]          = {"Mononoki Nerd Font:style=Regular:size=15"};
 static const Bool viewontag         = True;     /* Switch view on tag switch */
+static const char *fonts[]          = {"Mononoki Nerd Font:style=Regular:size=15"};
 static const char dmenufont[]       = {"FantasqueSansMono Nerd Font:size=15"};
 static const char col_gray1[]       = "#2A303A";
 static const char col_gray2[]       = "#444444";
@@ -30,39 +30,39 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                      instance             title           tags mask   iscentered    switchtotag    isfloating   monitor */
-	{ "Gimp",                     NULL,                NULL,            0,          0,            1,             1,           -1, },
-	{ "Firefox",                  NULL,                NULL,            1 << 2,     0,            1,             0,           -1, },
-    { "mpv",                      NULL,                NULL,            1 << 3,     0,            1,             0,           -1, },
-    { "Subl",                     NULL,                NULL,            1,          0,            1,             0,           -1, },
-    { "Thunar",                   NULL,                NULL,            1,          0,            1,             0,           -1, },
-    { "Pcmanfm",                  NULL,                NULL,            1,          0,            1,             0,           -1, },
-    { "URxvt",                    NULL,                NULL,            0,          0,            1,             0,           -1, },
-    { "ffplay",                   NULL,                NULL,            1 << 4,     0,            1,             0,           -1, },
-    { "Meld",                     NULL,                NULL,            1 << 1,     0,            1,             0,           -1, },
-    { "Gpick",                    NULL,                NULL,            1,          0,            1,             1,           -1, },
-    { "pulsemixer",               NULL,                NULL,            0,          0,            1,             1,           -1, },
-    { "Alacritty",                NULL,                NULL,            1,          0,            1,             0,           -1, },
-    { "file-roller",              NULL,                NULL,            1,          1,            0,             1,           -1, },
-    { "Lxappearance",             NULL,                NULL,            1,          0,            1,             1,           -1, },
-    { "Brave-browser",            NULL,                NULL,            1 << 2,     0,            1,             0,           -1, },
-    { "Chromium",                 NULL,                NULL,            1 << 2,     0,            1,             0,           -1, },
-    { "TelegramDesktop",          NULL,                NULL,            1 << 1,     0,            1,             0,           -1, },
-	{ "Vivaldi-stable",           NULL,                NULL,            1 << 2,     0,            1,             0,           -1, },
-    { "File Operation Progress",  NULL,                NULL,            0,          0,            0,             1,           -1, },
-    { NULL,                       "x_st",              NULL,            0,          0,            0,             1,           -1, },
-    { NULL,                       "key",               NULL,            0,          0,            0,             1,           -1, },
-    { NULL,                       "x_mem",             NULL,            0,          0,            0,             1,           -1, },
-    { NULL,                       "x_ranger",          NULL,            0,          0,            0,             1,           -1, },
-    { "cava",                     "st-256color",       NULL,            1 << 4,     0,            1,             0,           -1, },
-    { "st-256color",              "st-256color",       "cava",          1 << 4,     0,            1,             0,           -1, },
-    { "ncmpcpp",                  "st-256color",       NULL,            1 << 4,     0,            1,             0,           -1, },
-    { "TelegramDesktop",          "telegram-desktop",  "Media viewer",  1 << 1,     0,            1,             1,           -1, },
-    { "file-roller",              "file-roller",       "Extract",       1,          1,            0,             1,           -1, },
-    { "file-roller",              "file-roller",       "Compress",      1,          1,            0,             1,           -1, },
-    { "Subl",                     NULL,                "Open File",     0,          0,            0,             1,           -1, },
-    { "zenity",                   NULL,                NULL,            0,          0,            0,             1,           -1, },
-    { "Xarchiver",                NULL,                NULL,            0,          0,            0,             1,           -1, },
+	/* class                      instance             title           tags mask     switchtotag    isfloating   monitor */
+	{ "Gimp",                     NULL,                NULL,            0,            1,             1,           -1, },
+	{ "Firefox",                  NULL,                NULL,            1 << 2,       1,             0,           -1, },
+    { "mpv",                      NULL,                NULL,            1 << 3,       1,             0,           -1, },
+    { "Subl",                     NULL,                NULL,            1,            1,             0,           -1, },
+    { "Thunar",                   NULL,                NULL,            1,            1,             0,           -1, },
+    { "Pcmanfm",                  NULL,                NULL,            1,            1,             0,           -1, },
+    { "URxvt",                    NULL,                NULL,            0,            1,             0,           -1, },
+    { "ffplay",                   NULL,                NULL,            1 << 4,       1,             0,           -1, },
+    { "Meld",                     NULL,                NULL,            1 << 1,       1,             0,           -1, },
+    { "Gpick",                    NULL,                NULL,            1,            1,             1,           -1, },
+    { "pulsemixer",               NULL,                NULL,            0,            1,             1,           -1, },
+    { "Alacritty",                NULL,                NULL,            1,            1,             0,           -1, },
+    { "Lxappearance",             NULL,                NULL,            1,            1,             1,           -1, },
+    { "Brave-browser",            NULL,                NULL,            1 << 2,       1,             0,           -1, },
+    { "Chromium",                 NULL,                NULL,            1 << 2,       1,             0,           -1, },
+    { "TelegramDesktop",          NULL,                NULL,            1 << 1,       1,             0,           -1, },
+	{ "Vivaldi-stable",           NULL,                NULL,            1 << 2,       1,             0,           -1, },
+    { "file-roller",              NULL,                NULL,            0,            0,             1,           -1, },
+    { "File Operation Progress",  NULL,                NULL,            0,            0,             1,           -1, },
+    { "zenity",                   NULL,                NULL,            0,            0,             1,           -1, },
+    { NULL,                       "x_st",              NULL,            0,            0,             1,           -1, },
+    { NULL,                       "key",               NULL,            0,            0,             1,           -1, },
+    { NULL,                       "x_mem",             NULL,            0,            0,             1,           -1, },
+    { NULL,                       "x_ranger",          NULL,            0,            0,             1,           -1, },
+    { "cava",                     "st-256color",       NULL,            1 << 4,       1,             0,           -1, },
+    { "ncmpcpp",                  "st-256color",       NULL,            1 << 4,       1,             0,           -1, },
+    { "st-256color",              "st-256color",       "cava",          1 << 4,       1,             0,           -1, },
+    { "TelegramDesktop",          "telegram-desktop",  "Media viewer",  1 << 1,       1,             1,           -1, },
+    { "file-roller",              "file-roller",       "File-roller",   0,            0,             1,           -1, },
+    { "file-roller",              "file-roller",       "File-roller",   0,            0,             1,           -1, },
+    { "Subl",                     NULL,                "Open File",     0,            0,             1,           -1, },
+
 
 };
 
