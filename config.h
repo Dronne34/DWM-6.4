@@ -2,24 +2,26 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const int startwithgaps[]    = { 8 };	/* 1 means gaps are used by default, this can be customized for each tag */
-static const unsigned int gappx[]   = { 8 };   /* default gap between windows in pixels, this can be customized for each tag */
+static const int startwithgaps[]    = { 10 };	/* 1 means gaps are used by default, this can be customized for each tag */
+static const unsigned int gappx[]   = { 10 };   /* default gap between windows in pixels, this can be customized for each tag */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int viewonrulestag 	= 1;		 /* 1 means when open applications view will move to tags defined in rules*/
-static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *fonts[]          = {"Mononoki Nerd Font:style=Regular:size=15"};
+static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char dmenufont[]       = {"FantasqueSansMono Nerd Font:size=15"};
 static const char col_gray1[]       = "#2A303A";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+static const char col_cyan1[]       = "#99cc00";
+static const char col_cyan2[]       = "#cc3399";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_gray3, col_gray1, col_cyan1 },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan2 },
 };
 
 /* tagging */
@@ -30,39 +32,43 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                      instance             title           tags mask     switchtotag    isfloating   monitor */
-	{ "Gimp",                     NULL,                NULL,            0,            1,             1,           -1, },
-	{ "Firefox",                  NULL,                NULL,            1 << 2,       1,             0,           -1, },
-    { "mpv",                      NULL,                NULL,            1 << 3,       1,             0,           -1, },
-    { "Subl",                     NULL,                NULL,            1,            1,             0,           -1, },
-    { "Thunar",                   NULL,                NULL,            1,            1,             0,           -1, },
-    { "Pcmanfm",                  NULL,                NULL,            1,            1,             0,           -1, },
-    { "URxvt",                    NULL,                NULL,            0,            1,             0,           -1, },
-    { "ffplay",                   NULL,                NULL,            1 << 4,       1,             0,           -1, },
-    { "Meld",                     NULL,                NULL,            1 << 1,       1,             0,           -1, },
-    { "Gpick",                    NULL,                NULL,            1,            1,             1,           -1, },
-    { "pulsemixer",               NULL,                NULL,            0,            1,             1,           -1, },
-    { "Alacritty",                NULL,                NULL,            1,            1,             0,           -1, },
-    { "Lxappearance",             NULL,                NULL,            1,            1,             1,           -1, },
-    { "Brave-browser",            NULL,                NULL,            1 << 2,       1,             0,           -1, },
-    { "Chromium",                 NULL,                NULL,            1 << 2,       1,             0,           -1, },
-    { "TelegramDesktop",          NULL,                NULL,            1 << 1,       1,             0,           -1, },
-	{ "Vivaldi-stable",           NULL,                NULL,            1 << 2,       1,             0,           -1, },
-    { "file-roller",              NULL,                NULL,            0,            0,             1,           -1, },
-    { "File Operation Progress",  NULL,                NULL,            0,            0,             1,           -1, },
-    { "zenity",                   NULL,                NULL,            0,            0,             1,           -1, },
-    { NULL,                       "x_st",              NULL,            0,            0,             1,           -1, },
-    { NULL,                       "key",               NULL,            0,            0,             1,           -1, },
-    { NULL,                       "x_mem",             NULL,            0,            0,             1,           -1, },
-    { NULL,                       "x_ranger",          NULL,            0,            0,             1,           -1, },
-    { "cava",                     "st-256color",       NULL,            1 << 4,       1,             0,           -1, },
-    { "ncmpcpp",                  "st-256color",       NULL,            1 << 4,       1,             0,           -1, },
-    { "st-256color",              "st-256color",       "cava",          1 << 4,       1,             0,           -1, },
-    { "TelegramDesktop",          "telegram-desktop",  "Media viewer",  1 << 1,       1,             1,           -1, },
-    { "file-roller",              "file-roller",       "File-roller",   0,            0,             1,           -1, },
-    { "file-roller",              "file-roller",       "File-roller",   0,            0,             1,           -1, },
-    { "Subl",                     NULL,                "Open File",     0,            0,             1,           -1, },
-
+	/* class                      instance                title           tags mask     switchtotag    isfloating   monitor */
+	{ "Gimp",                     NULL,                   NULL,            0,            1,             1,           -1, },
+	{ "Firefox",                  NULL,                   NULL,            1 << 2,       1,             0,           -1, },
+    { "mpv",                      NULL,                   NULL,            1 << 3,       1,             0,           -1, },
+    { "Subl",                     NULL,                   NULL,            1,            1,             0,           -1, },
+    { "Thunar",                   NULL,                   NULL,            1,            1,             0,           -1, },
+    { "Pcmanfm",                  NULL,                   NULL,            1,            1,             0,           -1, },
+    { "URxvt",                    NULL,                   NULL,            0,            1,             0,           -1, },
+    { "ffplay",                   NULL,                   NULL,            1 << 4,       1,             0,           -1, },
+    { "Meld",                     NULL,                   NULL,            1 << 1,       1,             0,           -1, },
+    { "Gpick",                    NULL,                   NULL,            1,            1,             1,           -1, },
+    { "pulsemixer",               NULL,                   NULL,            0,            1,             1,           -1, },
+    { "Alacritty",                NULL,                   NULL,            1,            1,             0,           -1, },
+    { "org.gnome.FileRoller",     NULL,                   NULL,            0,            0,             1,           -1, },
+    { "Lxappearance",             NULL,                   NULL,            1,            1,             1,           -1, },
+    { "Brave-browser",            NULL,                   NULL,            1 << 2,       1,             0,           -1, },
+    { "Chromium",                 NULL,                   NULL,            1 << 2,       1,             0,           -1, },
+    { "TelegramDesktop",          NULL,                   NULL,            1 << 1,       1,             0,           -1, },
+	{ "Vivaldi-stable",           NULL,                   NULL,            1 << 2,       1,             0,           -1, },
+    { "File Operation Progress",  NULL,                   NULL,            0,            0,             1,           -1, },
+    { NULL,                       "x_st",                 NULL,            0,            0,             1,           -1, },
+    { NULL,                       "key",                  NULL,            0,            0,             1,           -1, },
+    { NULL,                       "x_mem",                NULL,            0,            0,             1,           -1, },
+    { NULL,                       "x_ranger",             NULL,            0,            0,             1,           -1, },
+    { "cava",                     "st-256color",          NULL,            1 << 4,       1,             0,           -1, },
+    { "st-256color",              "st-256color",          "cava",          1 << 4,       1,             0,           -1, },
+    { "ncmpcpp",                  "st-256color",          NULL,            1 << 4,       1,             0,           -1, },
+    { "TelegramDesktop",          "telegram-desktop",     "Media viewer",  1 << 1,       1,             1,           -1, },
+    { "org.gnome.FileRoller",     "org.gnome.FileRoller", "Extract",       0,            0,             1,           -1, },
+    { "org.gnome.FileRoller",     "org.gnome.FileRoller", "Compress",      0,            0,             1,           -1, },
+    { "Subl",                     NULL,                   "Open File",     0,            0,             1,           -1, },
+    { "zenity",                   NULL,                   NULL,            0,            0,             1,           -1, },
+    { NULL,                       NULL,                   "Extract files", 0,            0,             1,           -1, },
+    { NULL,                       "Xarchiver",            "Extract files", 0,            0,             1,           -1, },
+    { "xarchiver",                "Xarchiver",            "Extract files", 0,            0,             1,           -1, },
+    { "Xarchiver",                NULL,                   NULL,            0,            0,             1,           -1, },
+    { NULL,                       NULL,                   "sb-popupgrade", 0,            0,             1,           -1, },
 
 };
 
@@ -77,6 +83,8 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+    { "|M|",      centeredmaster },
+    { ">M>",      centeredfloatingmaster },
 	{ NULL,       NULL },
 };
 
@@ -95,14 +103,15 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 
 	
-static const char *browsercmd[] = { "chromium",                       NULL };
-static const char *termedit[]   = { "alacritty", "-e",  "vim",               NULL };
-static const char *termfile[]   = { "alacritty", "-e", "ranger",             NULL };
-static const char *dmenucmd[]   = { "dmenu_run_history", "-i", "-l", "15", NULL };
+static const char *browsercmd[]  = { "chromium",                              NULL };
+static const char *termedit[]    = { "alacritty", "-e",  "vim",               NULL };
+static const char *termfile[]    = { "alacritty", "-e", "ranger",             NULL };
+static const char *dmenucmd[]    = { "dmenu_run_history", "-i", "-l", "15",   NULL };
 
-static const char *termcmd[]    = { "st",                                                   NULL };
-static const char *xst[]        = { "st", "-n", "x_st", "-g", "100x30",                     NULL };
-static const char *xranger[]    = { "st", "-n", "x_ranger", "-g", "100x30", "-e", "ranger", NULL };
+static const char *termcmd[]     = { "st",                                                               NULL };
+static const char *xst[]         = { "st", "-n", "x_st", "-g", "100x30",                                 NULL };
+static const char *xranger[]     = { "st", "-n", "x_ranger", "-g", "100x30", "-e", "ranger",             NULL };
+static const char *xpopupgrade[] = { "st", "-n", "x_popupgrade", "-g", "100x30", "-e", "sb-popupgrade", NULL };
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
@@ -119,12 +128,15 @@ static const Key keys[] = {
     { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
     { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
     { MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
+    { MODKEY,                       XK_u,      setlayout,      {.v = &layouts[4]} },
+    { MODKEY,                       XK_o,      setlayout,      {.v = &layouts[5]} },
     { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
     { ShiftMask|Mod4Mask,           XK_s,      spawn,          {.v = termedit } },
     { ShiftMask|Mod4Mask,           XK_t,      spawn,          {.v = termfile } },
     { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
     { MODKEY|ControlMask,           XK_f,      spawn,          {.v = browsercmd } },
-    { MODKEY,                       XK_u,      spawn,          {.v = xranger } },
+    { MODKEY|ControlMask,           XK_i,      spawn,          {.v = xpopupgrade } },
+    { MODKEY|ControlMask,           XK_u,      spawn,          {.v = xranger } },
     { MODKEY,                       XK_y,      spawn,          {.v = xst } },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
