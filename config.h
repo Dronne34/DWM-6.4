@@ -2,13 +2,13 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const int startwithgaps[]    = { 10 };	/* 1 means gaps are used by default, this can be customized for each tag */
-static const unsigned int gappx[]   = { 10 };   /* default gap between windows in pixels, this can be customized for each tag */
+static const int startwithgaps[]    = { 13 };	/* 1 means gaps are used by default, this can be customized for each tag */
+static const unsigned int gappx[]   = { 13 };   /* default gap between windows in pixels, this can be customized for each tag */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int viewonrulestag 	= 1;		 /* 1 means when open applications view will move to tags defined in rules*/
-static const char *fonts[]          = {"Mononoki Nerd Font:style=Regular:size=15"};
+static const char *fonts[]          = {"Mononoki Nerd Font:style=Regular:size=16"};
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char dmenufont[]       = {"FantasqueSansMono Nerd Font:size=15"};
 static const char col_gray1[]       = "#2A303A";
@@ -88,7 +88,7 @@ static const Layout layouts[] = {
 	{ NULL,       NULL },
 };
 
-
+/* key definitions */
 #define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
@@ -158,6 +158,7 @@ static const Key keys[] = {
     { MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
     { MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
     { MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },
+    { MODKEY|ShiftMask,             XK_q,      quit,           {0} },
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
     TAGKEYS(                        XK_3,                      2)
@@ -167,7 +168,6 @@ static const Key keys[] = {
     TAGKEYS(                        XK_7,                      6)
     TAGKEYS(                        XK_8,                      7)
     TAGKEYS(                        XK_9,                      8)
-    { MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
 /* button definitions */
